@@ -1,0 +1,24 @@
+{
+  "name": "iVasms Telegram Bot",
+  "description": "Fetch SMS from ivasms and forward to Telegram",
+  "repository": "https://github.com/yourusername/ivasms-bot",
+  "keywords": ["telegram", "bot", "heroku", "httpx", "ivasms"],
+  "env": {
+    "YOUR_BOT_TOKEN": {
+      "description": "Telegram Bot API Token from BotFather",
+      "required": true
+    },
+    "USERNAME": {
+      "description": "iVasms login email",
+      "required": true
+    },
+    "PASSWORD": {
+      "description": "iVasms login password",
+      "required": true
+    },
+    "ADMIN_CHAT_IDS": {
+      "description": "Comma separated list of admin IDs",
+      "required": true
+    }
+  }
+}
