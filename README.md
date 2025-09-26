@@ -1,92 +1,80 @@
+"""
+Orange Carrier Telegram Bot
+===========================
 
+🚀 A Python bot that logs into **multiple Orange Carrier accounts**, fetches
+**CDR records**, and sends them directly to a Telegram group/channel.
 
-🔧 Short GitHub Repo Description
-
-A multi-account Orange Carrier CDR fetcher with Telegram bot integration. 
-Fetches CDR records from multiple Orange Carrier accounts, sends them to a Telegram group, 
-supports /start command, and hourly heartbeat messages. Ready for Heroku deployment.
-
-
----
-
-📄 Suggested README.md Content
-
-# Orange Carrier Telegram Bot
-
-🚀 A Python bot that logs into **multiple Orange Carrier accounts**, fetches **CDR records**, and sends them directly to a Telegram group/channel.
-
-### ✨ Features
+-----------------------------------
+✨ Features
+-----------------------------------
 - ✅ Multi-account support (parallel login & CDR fetch)
 - ✅ Sends new call records (CLI, To, Time, Duration, Type) to Telegram
 - ✅ Prevents duplicate messages
 - ✅ `/start` command support
-- ✅ Hourly heartbeat message (`Bot active hai...`)
+- ✅ Hourly heartbeat message ("Bot active hai...")
 - ✅ Heroku-ready (Procfile, runtime.txt, app.json included)
 
----
+-----------------------------------
+🛠 Deployment
+-----------------------------------
+1. Clone Repo:
+    git clone https://github.com/Akash8t2/Orangecarrier.git
+    cd Orangecarrier
 
-### 🛠 Deployment
+2. Set Environment Variables:
+   - BOT_TOKEN → Your Telegram Bot Token
+   - CHAT_ID   → Telegram Group/Chat ID (e.g., -100123456789)
+   - ACCOUNTS  → JSON list of Orange Carrier accounts
 
-### 1. Deploy to Heroku
+   Example ACCOUNTS:
+   [
+     {"email": "user1@example.com", "password": "pass1"},
+     {"email": "user2@example.com", "password": "pass2"}
+   ]
 
-Click below 👇
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Akash8t2/ORANGECARRIER"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="250" height="50"/></a></p>
+3. Deploy to Heroku:
+   Use the Deploy Button:
 
-#### 1. Clone Repo
-```bash
-git clone https://github.com/yourname/orange-carrier-bot.git
-cd orange-carrier-bot
+   <h2 align="center">🚀 Deploy to Heroku</h2>
 
-2. Set Environment Variables
+<p align="center">
+  <a href="https://heroku.com/deploy?template=https://github.com/Akash8t2/ORANGECARRIER">
+    <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" width="270" height="60"/>
+  </a>
+</p>
 
-On Heroku (or locally with .env):
+<p align="center">
+  Click the button above to instantly deploy this bot to <b>Heroku</b> and get it running in minutes!
+</p>
 
-BOT_TOKEN → Your Telegram Bot Token
-
-CHAT_ID → Telegram Group/Chat ID (e.g., -100123456789)
-
-ACCOUNTS → JSON list of Orange Carrier accounts
-
-[
-  {"email": "user1@example.com", "password": "pass1"},
-  {"email": "user2@example.com", "password": "pass2"}
-]```
-
-
-
-
-
-
----
-
+-----------------------------------
 📂 Project Structure
-
-orange-carrier-bot/
+-----------------------------------
+Orangecarrier/
 │── orange_bot.py       # Main bot script
 │── requirements.txt    # Python dependencies
 │── Procfile            # Heroku process definition
 │── runtime.txt         # Python runtime version
 │── app.json            # Heroku deploy config
 
-
----
-
+-----------------------------------
 ⚡ Tech Stack
+-----------------------------------
+- Python 3.10+
+- httpx (HTTP client)
+- BeautifulSoup4 (HTML parsing)
+- python-telegram-bot (Telegram API)
 
-Python 3.10+
+-----------------------------------
+📬 Contact
+-----------------------------------
+👤 Author: Akash
+💬 Telegram: @botcasx
+📦 GitHub:  https://github.com/Akash8t2
 
-httpx (HTTP client)
-
-BeautifulSoup4 (HTML parsing)
-
-python-telegram-bot (Telegram API)
-
-
-
----
-
+-----------------------------------
 📜 License
-
-MIT License © 2025
-
----
+-----------------------------------
+MIT License © 2025 Akash
+"""
