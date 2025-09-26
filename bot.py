@@ -131,18 +131,16 @@ async def main():
     # /start command
     app.add_handler(CommandHandler("start", start_command))
 
-    # Start workers
-    for acc in ACCOUNTS:
-        asyncio.create_task(worker(app, acc["email"], acc["password"]))
+    # Background workers start after bot init
+    async def on_startup(_: Application):
+        for acc in ACCOUNTS:
+            asyncio.create_task(worker(app, acc["email"], acc["password"]))
+        asyncio.create_task(heartbeat(app))
 
-    # Heartbeat
-    asyncio.create_task(heartbeat(app))
+    app.post_init = on_startup
 
-    # Proper lifecycle for polling
-    await app.initialize()
-    await app.start()
-    await app.updater.start_polling()
-    await app.updater.wait_closed()
+    # Ye correct lifecycle hai
+    await app.run_polling()
 
 
 if __name__ == "__main__":
