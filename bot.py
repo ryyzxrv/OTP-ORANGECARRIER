@@ -121,7 +121,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("🤖 Bot is running and active!")
 
 
-async def main():
+def main():
     if not BOT_TOKEN or not CHAT_ID or not ACCOUNTS:
         logger.error("❌ BOT_TOKEN / CHAT_ID / ACCOUNTS env variables missing!")
         return
@@ -131,7 +131,7 @@ async def main():
     # /start command
     app.add_handler(CommandHandler("start", start_command))
 
-    # Background workers start after bot init
+    # Background workers start after init
     async def on_startup(_: Application):
         for acc in ACCOUNTS:
             asyncio.create_task(worker(app, acc["email"], acc["password"]))
@@ -139,9 +139,9 @@ async def main():
 
     app.post_init = on_startup
 
-    # Ye correct lifecycle hai
-    await app.run_polling()
+    # Ye khud event loop manage karega
+    app.run_polling()
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
