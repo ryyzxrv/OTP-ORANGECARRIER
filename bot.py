@@ -21,7 +21,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = int(os.getenv("CHAT_ID", "0"))
 
 # Accounts env me JSON ke form me daalna hoga
-# Example: [{"email":"user1@example.com","password":"pass1"},{"email":"user2","password":"pass2"}]
+# Example: [{"email":"user1@example.com","password":"pass1"}]
 ACCOUNTS = json.loads(os.getenv("ACCOUNTS", "[]"))
 
 seen_ids = set()
@@ -61,7 +61,7 @@ async def fetch_orange_cdr(client: httpx.AsyncClient, email: str, password: str)
 
                 try:
                     parsed_time = datetime.strptime(time_str, "%Y-%m-%d %H:%M:%S").strftime("%d-%m-%Y %H:%M")
-                except:
+                except Exception:
                     parsed_time = time_str
 
                 uid = f"{email}_{cli}_{parsed_time}"
@@ -131,14 +131,18 @@ async def main():
     # /start command
     app.add_handler(CommandHandler("start", start_command))
 
-    # workers per account
+    # Start workers
     for acc in ACCOUNTS:
-        app.create_task(worker(app, acc["email"], acc["password"]))
+        asyncio.create_task(worker(app, acc["email"], acc["password"]))
 
-    # heartbeat
-    app.create_task(heartbeat(app))
+    # Heartbeat
+    asyncio.create_task(heartbeat(app))
 
-    await app.run_polling()
+    # Proper lifecycle for polling
+    await app.initialize()
+    await app.start()
+    await app.updater.start_polling()
+    await app.updater.wait_closed()
 
 
 if __name__ == "__main__":
