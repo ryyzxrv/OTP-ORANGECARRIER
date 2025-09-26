@@ -27,6 +27,11 @@ supports /start command, and hourly heartbeat messages. Ready for Heroku deploym
 
 ### 🛠 Deployment
 
+### 1. Deploy to Heroku
+
+Click below 👇
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Akash8t2/ORANGECARRIER"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="250" height="50"/></a></p>
+
 #### 1. Clone Repo
 ```bash
 git clone https://github.com/yourname/orange-carrier-bot.git
@@ -45,13 +50,9 @@ ACCOUNTS → JSON list of Orange Carrier accounts
 [
   {"email": "user1@example.com", "password": "pass1"},
   {"email": "user2@example.com", "password": "pass2"}
-]
+]```
 
 
-3. Deploy to Heroku
-
-Click below 👇
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Akash8t2/ORANGECARRIER"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="250" height="50"/></a></p>
 
 
 
