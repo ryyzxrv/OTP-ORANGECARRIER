@@ -69,12 +69,12 @@ Orangecarrier/
 -----------------------------------
 📬 Contact
 -----------------------------------
-👤 Author: Akash
-💬 Telegram: @botcasx
-📦 GitHub:  https://github.com/Akash8t2
+👤 Author: Rayyzxer
+💬 Telegram: @r4yvrdnxx
+📦 GitHub:  https://github.com/ryyzxrv
 
 -----------------------------------
 📜 License
 -----------------------------------
-MIT License © 2025 Akash
+MIT License © 2025 Ryyz
 """
