@@ -5,12 +5,12 @@
   "keywords": ["python", "telegram", "orange-carrier", "cdr"],
   "env": {
     "BOT_TOKEN": {
-      "description": "8113784641:AAGApeCmSf06k2CrEswtYM85Ya3uIRuKxFo",
-      "value": ""
+      "description": "Your Telegram Bot Token",
+      "value": "8113784641:AAGApeCmSf06k2CrEswtYM85Ya3uIRuKxFo"
     },
     "CHAT_ID": {
-      "description": " -1002905110441",
-      "value": ""
+      "description": "Telegram Chat/Group ID (e.g. -100123456789)",
+      "value": "-1002905110441"
     },
     "ACCOUNTS": {
       "description": "List of Orange Carrier accounts in JSON format",
