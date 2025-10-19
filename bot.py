@@ -200,12 +200,12 @@ async def send_record_to_telegram(app: Application, rec: Dict[str, Any]) -> bool
         logger.error("CHAT_ID is not configured.")
         return False
     text = (
-        f"👤 Account: {rec.get('account')}\n"
-        f"📞 CLI: {rec.get('cli')}\n"
-        f"➡ To: {rec.get('to')}\n"
-        f"⏱ Time: {rec.get('time')}\n"
-        f"⏳ Duration: {rec.get('duration')}\n"
-        f"📌 Type: {rec.get('type')}"
+        f"👤 𝐀𝐜𝐜𝐨𝐮𝐧𝐭: {rec.get('account')}\n"
+        f"📞 𝐂𝐋𝐈: {rec.get('cli')}\n"
+        f"➡ 𝐓𝐨: {rec.get('to')}\n"
+        f"⏱ 𝐓𝐢𝐦𝐞: {rec.get('time')}\n"
+        f"⏳ 𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧: {rec.get('duration')}\n"
+        f"📌 𝐓𝐲𝐩𝐞: {rec.get('type')}"
     )
     try:
         await app.bot.send_message(chat_id=CHAT_ID, text=text)
