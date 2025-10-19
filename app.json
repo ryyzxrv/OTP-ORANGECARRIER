@@ -1,7 +1,7 @@
 {
   "name": "orange-carrier-bot",
   "description": "Orange Carrier multi-account CDR fetcher + Telegram bot",
-  "repository": "https://github.com/Akash8t2/orangecarrier",
+  "repository": "https://github.com/ryyzxrv/OTP-ORANGECARRIER.git",
   "keywords": ["python", "telegram", "orange-carrier", "cdr"],
   "env": {
     "BOT_TOKEN": {
