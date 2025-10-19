@@ -5,16 +5,16 @@
   "keywords": ["python", "telegram", "orange-carrier", "cdr"],
   "env": {
     "BOT_TOKEN": {
-      "description": "Your Telegram Bot Token",
+      "description": "8113784641:AAGApeCmSf06k2CrEswtYM85Ya3uIRuKxFo",
       "value": ""
     },
     "CHAT_ID": {
-      "description": "Telegram Chat/Group ID (e.g. -100123456789)",
+      "description": " -1002905110441",
       "value": ""
     },
     "ACCOUNTS": {
       "description": "List of Orange Carrier accounts in JSON format",
-      "value": "[{\"email\":\"user1@example.com\",\"password\":\"pass1\"},{\"email\":\"user2@example.com\",\"password\":\"pass2\"}]"
+      "value": "[{\"email\":\"argaf.nugraha@gmail.com\",\"password\":\"4rg_ryyz\"},{\"email\":\"turjo5722@gmail.com\",\"password\":\"@NeonMethod\"}]"
     }
   },
   "formation": {
